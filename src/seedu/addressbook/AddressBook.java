@@ -1159,7 +1159,10 @@ public class AddressBook {
      * @return  string without the sign
      */
     private static String removePrefixSign(String s, String sign) {
-        return s.replace(sign, "");
+        if (s.startsWith(sign)) {
+            return s.replace(sign, "");
+        }
+        return s;
     }
 
     /**
